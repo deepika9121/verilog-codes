@@ -8,46 +8,37 @@ always@*
 begin
 if(sel==3'b000)
     begin 
-    out[0]=in;
-    out[1]=0;out[2]=0;out[3]=0; out[4]=0;out[5]=0;out[6]=0;out[7]=0;
+       out=8'b0000_0001;
     end
 else if(sel==3'b001)
-    begin
-    out[1]=in;
-    out[0]=0;out[2]=0;out[3]=0; out[4]=0;out[5]=0;out[6]=0;out[7]=0;
+    beginout=8'b0000_0010;
     end 
 else if(sel==3'b010)
     begin 
-    out[2]=in;
-    out[1]=0;out[0]=0;out[3]=0; out[4]=0;out[5]=0;out[6]=0;out[7]=0;
+    out=8'b0000_0100;
     end
 else if(sel==3'b011)
     begin
-    out[3]=in;
-    out[1]=0;out[2]=0;out[0]=0; out[4]=0;out[5]=0;out[6]=0;out[7]=0;
+    out=8'b0000_1000;
     end 
 else if(sel==3'b100)
     begin 
-    out[4]=in;
-    out[1]=0;out[2]=0;out[3]=0; out[0]=0;out[5]=0;out[6]=0;out[7]=0;
+    out=8'b0001_0000;
     end
 else if(sel==3'b101)
     begin
-    out[5]=in;
-    out[0]=0;out[2]=0;out[3]=0; out[4]=0;out[1]=0;out[6]=0;out[7]=0;
+    out=8'b0010_0000;
     end 
 else if(sel==3'b110)
     begin 
-    out[6]=in;
-    out[1]=0;out[0]=0;out[3]=0; out[4]=0;out[5]=0;out[2]=0;out[7]=0;
+    out=8'b0100_0000;
     end
 else if(sel==3'b111)
     begin
-    out[7]=in;
-    out[1]=0;out[2]=0;out[0]=0; out[4]=0;out[5]=0;out[6]=0;out[3]=0;
+    out=8'b1000_0000;
     end 
 else
-out[3:0]=4'bxxxx;
+    out=8'bxxxx_xxxx;
 
 end
 endmodule

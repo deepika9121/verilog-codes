@@ -8,16 +8,16 @@ always@*
 begin
 if(sel==1'b0)
     begin 
-    out[0]=in;
-    out[1]=0;
+        out=2'b01;
+    
     end
 else if(sel==1'b1)
     begin
-    out[1]=in;
-    out[0]=0;
+        out=2'b10;
+    
     end 
 else
-out[1:0]=2'bxx;
+    out=2'bxx;
 
 end
 endmodule
